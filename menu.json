@@ -1,0 +1,14 @@
+[
+ {
+  "nome":"Temaki Salmão",
+  "preco":40
+ },
+ {
+  "nome":"Ceviche",
+  "preco":45
+ },
+ {
+  "nome":"Combo Sushi",
+  "preco":65
+ }
+]

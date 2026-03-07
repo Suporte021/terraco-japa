@@ -1,3 +1,6 @@
+const SUPABASE_URL = "https://wysllrtctdrbvexdphbn.supabase.co";
+const SUPABASE_KEY = "wysllrtctdrbvexdphbn";
+
 let cart = [];
 
 fetch("menu.json")
@@ -38,13 +41,33 @@ ul.innerHTML = "";
 cart.forEach(i=>{
 let li = document.createElement("li");
 li.innerText = i.nome + " - R$"+i.preco;
+  
 ul.appendChild(li);
 });
 
 }
 
-function enviarPedido(){
+async function enviarPedido(){
 
-alert("Pedido enviado (teste)");
+let pedido = {
+cliente: "Teste",
+telefone: "0000",
+endereco: "Rua teste",
+itens: cart,
+total: cart.reduce((t,i)=>t+i.preco,0),
+status: true
+};
+
+await fetch(SUPABASE_URL + "/rest/v1/pedidos",{
+method:"POST",
+headers:{
+"apikey": SUPABASE_KEY,
+"Authorization": "Bearer " + SUPABASE_KEY,
+"Content-Type":"application/json"
+},
+body: JSON.stringify(pedido)
+});
+
+alert("Pedido enviado!");
 
 }

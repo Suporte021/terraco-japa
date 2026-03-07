@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://wysllrtctdrbvexdphbn.supabase.co";
-const SUPABASE_KEY = "wysllrtctdrbvexdphbn";
+const SUPABASE_KEY = "sb_publishable_4ZVW7lEg8z9JJ06zP81SgQ_n8efyHvN";
 
 let cart = [];
 
